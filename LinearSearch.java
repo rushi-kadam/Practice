@@ -7,6 +7,7 @@ public class LinearSearch {
         return false;
 
     }
+    //Returning index of element
      static int linearSearch2(int arr[], int target)
     {
         for(int index=0; index<arr.length; index++){
