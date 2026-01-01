@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class LinearSearch {
     static boolean linearSearch1(int arr[], int target)
     {
@@ -24,9 +27,37 @@ public class LinearSearch {
         }
         return false;
     }
+
+    // Leetcode -66. Plus One
+    //
+    static int[] plusOne(int[] digits) {
+        for (int i =digits.length-1; i>=0; i--) {
+            digits[i]= digits[i]+1;
+            if(digits[i]>9){
+                digits[i]= digits[i]%10;
+                continue;
+            }
+            else break;
+        }
+         if (digits[0]==0){
+            int lenght= digits.length +1;
+            int []arr = new int[lenght];
+            arr[0]=1;
+            for (int i=1; i<lenght; i++ ){
+                arr[i]=digits[i-1];
+            }
+            return arr;
+            
+        }
+        
+        return digits;
+    }
     public static void main(String[] args){
-        int[] numbers={1,2,3,4,5};
-        String name = "Rushikesh";
-        boolean found = linearSearch3(name,'f');
-        System.out.println(found);    }
+        int[] numbers={9};
+        int [] res= plusOne(numbers);
+        System.out.println(Arrays.toString(res));
+       // String name = "Rushikesh";
+        //boolean found = linearSearch3(name,'f');
+        //System.out.println(found);    
+        }
 }
