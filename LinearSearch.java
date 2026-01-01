@@ -52,10 +52,23 @@ public class LinearSearch {
         
         return digits;
     }
+
+    //Leetcode -268 Missing Number
+    static int missingNumber(int[] nums) {
+        int n= nums.length;
+        int t=0;
+        int sum = (n*(n+1))/2;
+        for (int i=0; i<n; i++) {
+           t=t+nums[i]; 
+        }
+        return sum-t;
+    }
+
     public static void main(String[] args){
-        int[] numbers={9};
-        int [] res= plusOne(numbers);
-        System.out.println(Arrays.toString(res));
+        int[] numbers={3,2,0};
+        System.out.println(missingNumber(numbers));
+       // int [] res= plusOne(numbers);
+        //System.out.println(Arrays.toString(res));
        // String name = "Rushikesh";
         //boolean found = linearSearch3(name,'f');
         //System.out.println(found);    
